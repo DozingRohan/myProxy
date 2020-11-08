@@ -68,31 +68,31 @@ public class Test {
          * cglib exec time-cost:212 ms
          * javasist exec time-cost:212 ms
          */
-        long start = System.currentTimeMillis();
-        IFlyService flyService1 = (IFlyService) JdkProxyFactory.getJdkProxy(new FlyServiceImpl());
-        for(int i = 0 ; i < x ; i ++){
-            flyService1.fly();
-        }
-        long end = System.currentTimeMillis();
-        IFlyService flyService2 = (IFlyService) CglibProxyFactory.getCglibProxy(new FlyServiceImpl());
-        for(int i = 0 ; i < x ; i ++){
-            flyService2.fly();
-        }
-        long send = System.currentTimeMillis();
-        IFlyService jsis1 = (IFlyService) JavassistProxyFactory.getJavassistProxy(new FlyServiceImpl());
-        for(int i = 0 ; i < x ; i ++){
-            jsis1.fly();
-        }
-        long send1 = System.currentTimeMillis();
-        IFlyService jsis2 = (IFlyService) JavassistByteCodeFactory.getJavassistBytecode(new FlyServiceImpl());
-        for(int i = 0 ; i < x ; i ++){
-            jsis2.fly();
-        }
-        long send2 = System.currentTimeMillis();
-        System.out.println("jdk exec time-cost:" + (end - start) + " ms");
-        System.out.println("cglib exec time-cost:" + (send - end) + " ms");
-        System.out.println("javasisProxy exec time-cost:" + (send1 - send) + " ms");
-        System.out.println("javasisByteCode exec time-cost:" + (send2 - send1) + " ms");
+//        long start = System.currentTimeMillis();
+//        IFlyService flyService1 = (IFlyService) JdkProxyFactory.getJdkProxy(new FlyServiceImpl());
+//        for(int i = 0 ; i < x ; i ++){
+//            flyService1.fly();
+//        }
+//        long end = System.currentTimeMillis();
+//        IFlyService flyService2 = (IFlyService) CglibProxyFactory.getCglibProxy(new FlyServiceImpl());
+//        for(int i = 0 ; i < x ; i ++){
+//            flyService2.fly();
+//        }
+//        long send = System.currentTimeMillis();
+//        IFlyService jsis1 = (IFlyService) JavassistProxyFactory.getJavassistProxy(new FlyServiceImpl());
+//        for(int i = 0 ; i < x ; i ++){
+//            jsis1.fly();
+//        }
+//        long send1 = System.currentTimeMillis();
+//        IFlyService jsis2 = (IFlyService) JavassistByteCodeFactory.getJavassistBytecode(new FlyServiceImpl());
+//        for(int i = 0 ; i < x ; i ++){
+//            jsis2.fly();
+//        }
+//        long send2 = System.currentTimeMillis();
+//        System.out.println("jdk exec time-cost:" + (end - start) + " ms");
+//        System.out.println("cglib exec time-cost:" + (send - end) + " ms");
+//        System.out.println("javasisProxy exec time-cost:" + (send1 - send) + " ms");
+//        System.out.println("javasisByteCode exec time-cost:" + (send2 - send1) + " ms");
 
 
     }
